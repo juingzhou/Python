@@ -70,7 +70,7 @@ if __name__ == "__main__":
             name = input("请输入你要查找的学生：")
             serach_student(name.strip())
         elif operate==3:
-            pass
+            print("还未弄好！")
         elif operate==4:
             name = input("请输入你要删除的学生：")
             del_student(name.strip())
