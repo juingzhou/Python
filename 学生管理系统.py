@@ -47,7 +47,6 @@ def del_student(del_name):
     else:
         print("%s 学生不存在"%(del_name))
 
-
 stus = []
 for i in range(1000):
     stu = {}
@@ -59,7 +58,7 @@ for i in range(1000):
     stu["age"] = rangage
     stu["qq"] = randqq
     stus.append(stu)
-    # print("%s    %s     %s     %s"%(randname,randsex,rangage,randqq))
+    
 
 if __name__ == "__main__":
     while True:
