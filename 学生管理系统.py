@@ -1,3 +1,6 @@
+import random
+import string
+
 def print_menu():
     print('*'*30)
     print("学生管理系统".center(30))
@@ -12,7 +15,7 @@ def add_student():
     name = input("请输入学生的姓名：")
     age = int(input("请输入学生的年龄："))
     qq = input("请输入学生的qq号：")
-    stu={}
+    stu = {}
     stu["name"] = name
     stu["age"] = age
     stu["qq"] = qq
@@ -44,7 +47,20 @@ def del_student(del_name):
     else:
         print("%s 学生不存在"%(del_name))
 
-stus=[]
+
+stus = []
+for i in range(1000):
+    stu = {}
+    randname = ''.join(random.sample(string.ascii_letters,4))
+    # randsex = random.choice(['Male','Female'])
+    rangage = random.randint(10,80)
+    randqq = ''.join(random.sample(string.digits,10))
+    stu["name"] = randname
+    stu["age"] = rangage
+    stu["qq"] = randqq
+    stus.append(stu)
+    # print("%s    %s     %s     %s"%(randname,randsex,rangage,randqq))
+
 if __name__ == "__main__":
     while True:
         print_menu()

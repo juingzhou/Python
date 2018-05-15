@@ -1,5 +1,6 @@
+import twisted
+
 s = "helloworld"
-sorted(s)
 result={}
 for i in s:
     result[i] = s.count(i)
