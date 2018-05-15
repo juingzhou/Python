@@ -1,2 +1,2 @@
 # Python
-个人python爬虫联系项目
+个人python爬虫练习项目
