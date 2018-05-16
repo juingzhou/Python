@@ -20,7 +20,7 @@ import os
 print(os.path.abspath("test.txt"))
 #os.getcwd() --得到当前的目录
 #os.listdir() --指定所有目录下所有的文件和目录名
-print(os.listdir("F:\\Python")[-1])
+print(os.path.abspath(os.listdir("F:\\Python")[-1]))
 #os.remove() --删除指定文件
 #os.rmdir() --删除指定目录
 #os.mkdir() --创建目录
