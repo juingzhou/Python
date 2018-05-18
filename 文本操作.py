@@ -1,8 +1,8 @@
 import os
 # import random
 # import string
-# fp = open("F:\\test.txt",'a+')
-# fp.writelines("姓名\t年龄\tqq号\n")
+fp = open("F:\\test.txt",'a+')
+fp.writelines("姓名\t年龄\tqq号\n")
 # for i in range(1000):
 #     stu = {}
 #     randname = ''.join(random.sample(string.ascii_letters,4))
@@ -20,7 +20,13 @@ import os
 print(os.path.abspath("test.txt"))
 #os.getcwd() --得到当前的目录
 #os.listdir() --指定所有目录下所有的文件和目录名
-print(os.path.abspath(os.listdir("F:\\Python")[-1]))
+source_file_name = os.listdir("F:\\Python")[-1]
+source_file = os.path.abspath(source_file_name)
+re_file_name = "re_"+source_file_name
+re_file = os.path.abspath(source_file_name)[:os.path.abspath(source_file_name).rfind("\\")]
+# print(os.path.abspath(os.listdir("F:\\Python")[-1]))
+print(re_file)
+os.rename(source_file,os.path.join(re_file,re_file_name))
 #os.remove() --删除指定文件
 #os.rmdir() --删除指定目录
 #os.mkdir() --创建目录
@@ -31,7 +37,7 @@ print(os.path.abspath(os.listdir("F:\\Python")[-1]))
 #os.getcwd() --获取当前工作目录
 #os.system() --执行shell指令
 #os.rename() --重新命名文件
-print(help(os.rename))
+# print(help(os.rename))
 
 
 # source_file = "F:\\test.txt"

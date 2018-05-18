@@ -1,5 +1,5 @@
 import twisted
-
+import os
 s = "helloworld"
 result={}
 for i in s:
@@ -14,3 +14,7 @@ for j in s:
     else:
         result1[j]=1
 print(result1)
+if os.name == 'nt':
+    print("Windows")
+else:
+    print("Linux")

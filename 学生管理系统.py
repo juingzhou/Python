@@ -1,5 +1,6 @@
 import random
 import string
+import os
 
 def print_menu():
     print('*'*30)
@@ -20,6 +21,7 @@ def add_student():
     stu["age"] = age
     stu["qq"] = qq
     stus.append(stu)
+    fp.writelines(name+'\t'+str(age)+'\t'+str(qq)+'\n')
     print("添加成功！")
 
 def serach_student(search_item):
@@ -47,20 +49,24 @@ def del_student(del_name):
     else:
         print("%s 学生不存在"%(del_name))
 
-stus = []
-for i in range(1000):
-    stu = {}
-    randname = ''.join(random.sample(string.ascii_letters,4))
-    # randsex = random.choice(['Male','Female'])
-    rangage = random.randint(10,80)
-    randqq = ''.join(random.sample(string.digits,10))
-    stu["name"] = randname
-    stu["age"] = rangage
-    stu["qq"] = randqq
-    stus.append(stu)
-    
-
+def student_info():
+    for i in range(1000):
+        randname = ''.join(random.sample(string.ascii_letters, 4))
+        # randsex = random.choice(['Male','Female'])
+        rangage = random.randint(10, 80)
+        randqq = ''.join(random.sample(string.digits, 10))
+        stu["name"] = randname
+        stu["age"] = rangage
+        stu["qq"] = randqq
+        stus.append(stu)
+        fp.writelines(randname+'\t'+str(rangage)+'\t'+str(randqq)+'\n')
 if __name__ == "__main__":
+    stus = []
+    stu = {}
+    fp = open("student_info.txt", 'a+')
+    if not(os.path.getsize("student_info.txt")):
+        fp.writelines("姓名\t年龄\tqq号\n")
+    student_info()
     while True:
         print_menu()
         operate=int(input("请输入你的想要的操作："))
