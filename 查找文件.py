@@ -12,3 +12,7 @@ def find_file(parent_dir, file_name):
 
 
 find_file("F:\\", "Python")
+# file_list_name = "F:\Python\Machine Learning\人工智能PDF中文教材教程资源包2.73G基本包含全部学习资料\人工智能PDF中文教材资源包2.73G基本包含全部学习资料"
+# for i,j,k in os.walk(file_list_name):
+#     for x in k:
+#         print(os.path.join(i,x))
