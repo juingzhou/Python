@@ -15,7 +15,7 @@ import decorator
 def deco(func):
     def wrapper():
         print(func.__name__)
-        func()
+        return func()
     return wrapper
 
 def fun():
@@ -29,3 +29,21 @@ def fun2():
     print("---2---")
 fun2()
 print(fun2)
+print('-'*50)
+
+import functools
+
+def note(func):
+    "note function"
+    @functools.wraps(func)
+    def wrapper():
+        print(func.__name__)
+        return func()
+    return wrapper
+
+
+@note
+def test():
+    print("I am test function")
+test()
+print(test.__doc__)
